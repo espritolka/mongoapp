@@ -8,7 +8,7 @@ mongoClient.connect(function(err, client){
     if(err) return console.log(err);
       
     const db = client.db("usersdb");
-    db.collection("users").deleteMany({name: "Tom"}, function(err, result){
+    db.collection("users").deleteOne({name: "Bob"}, function(err, result){
               
         console.log(result);
         client.close();
