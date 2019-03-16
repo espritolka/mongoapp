@@ -9,9 +9,9 @@ mongoClient.connect(function(err, client){
       
     const db = client.db("usersdb");
     const col = db.collection("users");
-    col.updateMany(
-        {name: "Sam"},              // критерий фильтрации
-        { $set: {name: "Bob"}},     // параметр обновления
+    col.updateOne(
+        {name: "Tom"}, 
+        { $set: {name: "Tom Junior", age:33}},
         function(err, result){
                   
             console.log(result);
